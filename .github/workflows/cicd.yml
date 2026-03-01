@@ -1,0 +1,25 @@
+#This is name of workflow that will display in Actions tab
+name: CICD
+# Manual click deliver workflow whenever needed
+
+on:
+   workflow_dispatch:
+
+jobs:
+    code:
+       runs-on: ubuntu-latest
+       steps:
+        - name: checkout code
+          run: echo "Code clone from github"
+          
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Build Docker Container
+          run: echo "Docker Container Build"
+          
+    deploy:
+     runs-on: ubuntu-latest
+     steps:
+        - name: Deploying the app
+          run: echo "Docker compose deployed the app"
